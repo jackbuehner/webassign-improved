@@ -1,0 +1,352 @@
+/* ==UserStyle==
+@name           WebAssign
+@namespace      https://github.com/jackbuehner/webassign-improved
+@version        1.0.0
+@description    An improved style for WebAssign that matches the Windows 10 UI
+@author         Jack Buehner
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.webassign.net/v4cgi"), url-prefix("https://www.webassign.net/web") {
+:root {
+    --background-color-1: #0a0a0a;
+    --background-color-2: #1b1b1b;
+    --background-color-3: #262626;
+    --background-color-4: #323130; /*tabbar*/
+    --background-color-5: #484644;
+    --text-color-1: #ffffff;
+    --text-color-2: #e0e0e0;
+    --text-color-3: #dcdcdc;
+    --text-color-4: #bdbdbd;
+    --text-color-5: #9e9e9e;
+    --text-color-blue: #78b4f8;
+    --text-color-red: #FF5252;
+
+}
+/*remove min-width*/
+#webAssignTop, .middle, #footerBox {
+    min-width: 0;
+}
+/*general*/
+#webAssign, body {
+    background: var(--background-color-3);
+}
+p {
+    color: var(--text-color-3);
+    font-family: 'Segoe UI' !important;
+    font-size: 12px !important;
+}
+a, a:link, a:active, a:visited, a#copyrightLink, .finalLinks a {
+    color: var(--text-color-red) !important;
+}
+/*page title*/
+.infoBox h1 {
+    color: var(--text-color-2);
+    margin: -100px 0px 0 66px;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    font-weight: 500;
+}
+.infoBox h1::before {
+    content:'- ';
+}
+/*WA-box*/
+.waBox .title {
+    background: var(--background-color-4);
+    padding-top: 4px;
+}
+.waBox .top .title h4 {
+    color: var(--text-color-2);
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    font-weight: 700;
+}
+.waBox {
+    border: 1px solid var(--background-color-4);
+}
+.waBox .content {
+    border: none;
+}
+.waBox .top > .left, .waBox .top .border, .waBox .top > .right,.waBox .bottom {
+    display: none;
+}
+.row.container {
+    background: transparent !important;
+}
+.row.container:hover {
+    background: rgba(255, 255, 255, 0.04) !important;
+}
+.waBox .content .row .rowLeft {
+    font-family: 'Segoe UI';
+    font-size: 12px;
+}
+.waBox .subTools {
+    background-image: none;
+    border-color: var(--background-color-4);
+}
+.waBox .subTools a {
+    color: var(--text-color-red);
+}
+.waBox .subTask {
+    background: none !important;
+}
+.rowRight .scoreBox {
+    border: 1px solid var(--background-color-4);
+}
+
+
+/*titlebar*/
+#topNav {
+    background: var(--background-color-1)
+}
+#topNav h1, #topNav p {
+    display: none;
+}
+#topNav::before {
+    content: 'WebAssign';
+    margin: 8px 0px 4px 3px;
+    display: inline-block;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    color: var(--text-color-2);
+}
+#topNav h2 {
+    color: var(--text-color-2);
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    font-weight: 500;
+    margin: 8px 0px 4px 0;
+}
+a.logOut, a.logOut:hover {
+    color: var(--text-color-red);
+}
+/*navigation bar*/
+#webAssign #studentNav {
+    background: var(--background-color-4);
+}
+#studentNav a {
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    color: var(--text-color-2) !important;
+    padding: 1px 5px;
+}
+#studentNav a:hover {
+    color: var(--text-color-2);
+    text-decoration: none;
+    font-weight: 700;
+}
+.studentNavBorder {
+    display: none; /*remove line under navigation bar*/
+}
+/*assignment response page ribbon*/
+.bread {
+    background: var(--background-color-4);
+    color: var(--text-color-2);
+    margin: -13px 0px 1.5em -16px;
+    width: 100vw;
+    height: 26px;
+    padding-top: 7px;
+}
+.bread ul li.first {
+    margin-left: 20px;
+    background: transparent;
+}
+.bread ul li {
+    font-family: 'Segoe UI';
+    font-size: 12px;
+}
+.bread a {
+    color: var(--text-color-2) !important;
+}
+.classInfo.pageRight.container {
+    margin-top: -7px;
+    padding-right: 4px;
+}
+.classInfo.pageRight.container > p {
+    display: inline;
+    color: var(--text-color-4);
+}
+.classInfo.pageRight.container > p::before {
+    content: '• ';
+}
+.classInfo.pageRight.container > p:first-of-type::before {
+    content: '';
+}
+/*assignment response score box*/
+.elasticTable.questionPartDetails .columnContent td.points, .elasticTable.assignmentQuestionDetails .columnContent td.points { /*points*/
+    background-color: var(--background-color-2);
+    color: var(--text-color-2);
+}
+.elasticTable.questionPartDetails .columnContent td.points.full_credit, .elasticTable.assignmentQuestionDetails .columnContent td.points.full_credit {
+    background-color: var(--background-color-2);
+}
+.elasticTable.questionPartDetails td, .elasticTable.assignmentQuestionDetails td { /*side headers*/
+    background-color: var(--background-color-2);
+}
+.elasticTable.questionPartDetails .columnLeft table td, .elasticTable.assignmentQuestionDetails .columnLeft table td { /*left side header*/
+    color: var(--text-color-4);
+}
+.elasticTable.questionPartDetails .columnRight table td, .elasticTable.assignmentQuestionDetails .columnRight table td { /*right side header*/
+    color: var(--text-color-2);
+}
+.elasticTable.assignmentQuestionDetails .questionNumber, .elasticTable.assignmentQuestionDetails .questionNumber:hover, .elasticTable.assignmentQuestionDetails .questionNumber.hover { /*question number*/
+    background-color: var(--background-color-2);
+    color: var(--text-color-red)
+}
+.elasticTable table td { /*border*/
+    border: 1px solid var(--background-color-4);
+}
+.elasticTable.questionPartDetails .columnContent, .elasticTable.assignmentQuestionDetails .columnContent { /*other text*/
+    color: var(--text-color-2);
+}
+.elasticTable.questionPartDetails .columnContent td.submissions, .elasticTable.assignmentQuestionDetails .columnContent td.submissions { /*submissions used*/
+    background-color: var(--background-color-2);
+}
+/*assignment summary*/
+#assignmentOverview {
+    margin-top: 15px;
+}
+.assignmentSummary .infoGroup {
+    border-color: var(--background-color-4);
+}
+.assignmentSummary h2 {
+    color: var(--text-color-2);
+}
+.assignmentSummary .infoText {
+    color: var(--text-color-4);
+}
+/*question box*/
+.waQBox {
+    border: 1px solid var(--background-color-4);
+    margin-left: 0;
+}
+.waQBox .title, .waQBox .title .qTitleLeft {
+    background: var(--background-color-4);
+    border: none;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    color: var(--text-color-2);
+}
+.waQBox .title .detailsLink.expand {
+    color: var(--text-color-red);
+}
+.waQBox .top .border, .waQBox .bottom .border, .waQBox .top > .right, .waQBox .top > .left, .waQBox .bottom > .right, .waQBox .bottom > .left {
+    display: none;
+}
+.waQBox .standard, .waQBox .crop {
+    background: transparent;
+}
+.waQBox > .qUtility > .standard, .waQBox > .qUtility > .crop {
+    border: none;
+}
+.waQBox > .qUtility > .standard {
+    padding: 0.4em 1.1em 1.6em;
+}
+.waQBox > .qUtility {
+    padding: 3px 0 21px 1em;
+}
+.waQBox > .qUtility > .standard, .waQBox > .qUtility > .crop {
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    color: var(--text-color-2);
+}
+.waQBox > .qUtility > .qButtons {
+    border: none;
+    background: none;
+}
+/*question details*/
+.questionDetail {
+    border: none;
+    border-bottom: 1px solid var(--background-color-4);
+    background: none;
+}
+/*ask your teacher*/
+.ayt-wrapper {
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--background-color-4);
+}
+.ayt-label-text {
+    color: var(--text-color-2);
+}
+/*final submit box*/
+.finalSubmitBox .finalSubmitBoxBorder, .finalSubmitBox {
+    background: none;
+    border: none;
+}
+.finalSubmitBox .bBorder, .finalSubmitBox .lTopCorner, .finalSubmitBox .rTopCorner, .finalSubmitBox .borderWrap, .finalSubmitBox .bBox {
+    display: none;
+}
+/*previous answers and aditional popout menus and windows*/
+.popupWrap .popupContent .middle, .allResponses .qResponse, .popupWrap .popupContent, .popupWrap .topNav, .popupWrap .topNavContent, #middle, #popupWrap #top, .form, .topNavContent {
+    background: var(--background-color-3);
+}
+.popupWrap .topNavContent {
+    border-color: var(--background-color-4);
+}
+.popupWrap .topNavBorder, .topNavBorder {
+    display: none;
+}
+.popupWrap .topNavContent h3, body {
+    color: var(--text-color-2);
+}
+.waQBox > .standard, .waQBox > .crop {
+    border: none;
+}
+.qContent .solutionHeadContainer {
+    padding: 2px;
+    background-color: #3165c3;
+}
+.qContent, input, .qContent table {
+    font-family: 'Segoe UI';
+    font-size: 12px;
+}
+/*buttons and text fields*/
+.sButton, .fButton, .iButton {
+    padding: 4px 20px !important;
+    background: #333333 !important;
+    border: 1px #9b9b9b solid !important;
+    color: white !important;
+}
+.sButton:hover, .iButton:hover {
+    background: #545454 !important;
+}
+.sButton:active, .iButton:active {
+    background: #666666 !important;
+}
+.sButton:focus, .iButton:focus {
+    border: 1px solid #ffffff !important;
+}
+#webAssign input, #webAssign select, #webAssign textarea {
+    background: #333333 !important;
+    border: 1px #9b9b9b solid !important;
+    color: white !important;
+}
+#webAssign input:hover, #webAssign select:hover, #webAssign textarea:hover {
+    background: #404040 !important;
+}
+#webAssign input:focus, #webAssign textarea:focus {
+    border: 1px solid #ffffff !important;
+    background: #333333 !important;
+}
+.static {
+    background: #111111;
+}
+
+}
+
+@-moz-document url-prefix("https://www.webassign.net/web/Student/Assignment-Responses") {
+.infoBox h1 {
+    margin: -111px 0px 0 66px;
+}
+.waBox .title {
+    padding-top: 0px;
+}
+.invisible {
+    visibility: visible !important;
+}
+font {
+
+    color: yellow;
+
+}
+}
